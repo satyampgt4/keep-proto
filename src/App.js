@@ -3,6 +3,7 @@ import './App.css';
 import Header from "./Components/Header";
 import CreateArea from "./Components/CreateArea";
 import Note from "./Components/Note";
+import Footer from './Components/Footer';
 function App() {
   const[notes, setNotes] = useState([]);
   const addNote = (newNotes) =>{
@@ -22,6 +23,7 @@ function App() {
   return(
     <>
     <Header/>
+    <div className ="Notearea">
     <CreateArea onAdd = {addNote}/>
     {notes.map((note, index) =>
     {return(
@@ -32,6 +34,8 @@ function App() {
         content = {note.content}
         onDelete ={deleteNote}/>) ;
     })}
+    </div>
+    <Footer/>
     </>
   );
 }
